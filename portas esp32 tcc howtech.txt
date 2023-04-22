@@ -1,0 +1,36 @@
+Definição de portas ESP32
+
+Sensor DHT 11 = 15 gnd
+modulo rele GND esp32
+
+Luz varanda = 23  rele 1    
+luz banheiro= 18	 rele 2
+luz quarto= 5		 rele 3
+bomba agua=19
+display =  22 e 21  5v= laranja  e gnd     cabo branco = sda  cinza = scl
+Sensor movimento PIR =  2 gnd 5v 
+Led bomba vermelho
+led bomba verde
+
+servo motor = 13 gnd e 5v
+sensor solo = 35
+
+
+3v3 = laranja - ok 
+5v = vermelho  - ok
+13 = branco  - ok
+gnd = marrom  - ok
+gnd2= marrom  - ok
+23= azul - ok
+22=branco  - ok
+21= cinza   - ok
+19= verde  - ok
+18= cinza  - ok
+5 = azul - ok
+15 = roxo - ok
+2= roxo    - ok
+35 = preto  - ok
+
+
+
+25  - luz garagem - ok vermelho
