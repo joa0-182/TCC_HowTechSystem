@@ -25,6 +25,27 @@ body {
     font-family: var(--fontePadrao);
 }
 
+.luzes-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--corBoxBranco);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.luzes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+    
+    font-size: 1.7rem;
+}
+
 .portao-titulo {
     display: flex;
     justify-content: center;
