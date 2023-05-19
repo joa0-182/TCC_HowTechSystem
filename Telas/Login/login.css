@@ -76,6 +76,7 @@ h2 {
     border-radius: 15px;
     border: 2px solid #cdcdcd;
     text-transform: uppercase;
+    outline-color: rgb(123, 123, 123);
 }
 
 .btn-login-container {
