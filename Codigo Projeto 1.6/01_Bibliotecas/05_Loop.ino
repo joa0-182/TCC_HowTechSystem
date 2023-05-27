@@ -86,8 +86,7 @@ void loop () {
           // esse é o fim da solicitação HTTP do cliente, então envie uma resposta:
           if (currentLine.length() == 0) {
 
-            if (header.indexOf(base64Enconding) >=0) {
-
+           
             
             // Os cabeçalhos HTTP sempre começam com um código de resposta (por exemplo, HTTP / 1.1 200 OK)
             // e um tipo de conteúdo para que o cliente saiba o que está por vir, em seguida, uma linha em branco:
@@ -262,32 +261,6 @@ void loop () {
               myservo.write(valueString.toInt());
               }
 
-             if (valueString = "0") 
-             {
-              digitalWrite(LedSaidaV, HIGH);
-              digitalWrite(LedEntradaV, LOW);
-              }
-              else if (valueString String ("90"))
-              {
-              digitalWrite(LedSaidaV, LOW);
-              digitalWrite(LedEntradaV, HIGH);
-              }
-              else
-              {
-              digitalWrite(LedSaidaV, LOW);
-              digitalWrite(LedEntradaV, LOW);
-              }
-             
-
-           
-
-            
-
-
-
-
-
-
            
             client.println("<P>");
 
@@ -304,16 +277,8 @@ void loop () {
 
             client.println();                     // A resposta HTTP termina com outra linha em branco:
             break;
-            }
-
-            else{
-              client.println("HTTP/1.1 401 Unauthorized");
-              client.println("WWW-Authenticate: Basic realm=\"Secure\"");
-              client.println("Content-Type: text/html");
-              client.println();
-              client.println("<html>Authentication failed</html>");
-            
-            }                                // interromper o loop while:
+           
+                               // interromper o loop while:
           } else {
             currentLine = "";                     // se você recebeu uma nova linha, limpe currentLine:
           }

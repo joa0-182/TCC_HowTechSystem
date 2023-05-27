@@ -26,8 +26,21 @@ void setup() {
     Serial.println(WiFi.localIP());
     Serial.println("------------------------------------------------------------");
 
-    delay(150);
     server.begin();
+    if (!MDNS.begin("howtech")) {
+        Serial.println("Error setting up MDNS responder!");
+        while(1) {
+            delay(1000);
+        }
+    }
+    Serial.println("mDNS responder started");
+
+    // Start TCP (HTTP) server
+    server.begin();
+    Serial.println("TCP server started");
+
+    // Add service to MDNS-SD
+    MDNS.addService("http", "tcp", 80);
   }
 
 
@@ -51,8 +64,6 @@ void setup() {
   pinMode(LedBanheiro,   OUTPUT);
   pinMode(LedQuarto,   OUTPUT);
   pinMode(BombaAgua,   OUTPUT);
-  pinMode(LedSaidaV,   OUTPUT);
-  pinMode(LedEntradaV,   OUTPUT);
   pinMode(LedGaragem,   OUTPUT);
 
   // Iniciam em LOW -> Desligados
@@ -60,8 +71,6 @@ void setup() {
   digitalWrite(LedBanheiro,  LOW);
   digitalWrite(LedQuarto,   LOW);
   digitalWrite(BombaAgua,   HIGH);
-  digitalWrite(LedSaidaV,   LOW);
-  digitalWrite(LedEntradaV,   LOW);
   digitalWrite(LedGaragem,   LOW);
   
 

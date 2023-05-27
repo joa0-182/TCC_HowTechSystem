@@ -7,6 +7,8 @@
 #include <DNSServer.h>
 #include <WebServer.h>
 #include <Servo.h>
+#include <ESPmDNS.h>
+#include <WiFiClient.h>
 
 
 // Biblioteca Sensor de Temperatura

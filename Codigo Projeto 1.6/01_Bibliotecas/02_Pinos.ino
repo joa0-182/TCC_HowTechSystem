@@ -6,8 +6,6 @@ Servo myservo;
 #define LedBanheiro 18
 #define LedQuarto   5
 #define BombaAgua   19
-#define LedSaidaV   27
-#define LedEntradaV   26
 #define LedGaragem   25
 
 

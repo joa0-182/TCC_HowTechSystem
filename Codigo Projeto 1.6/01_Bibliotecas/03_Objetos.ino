@@ -1,7 +1,7 @@
 /***INSTANCIANDO OBJETOS***********************************************************************************************************************************/
 
 // Configuraçoes e Endereço de Internet WIFI
-WiFiServer server                (8090);
+WiFiServer server                (80);
 //Variável para armazenar a solicitação HTTP
 String header;
 // Decode HTTP GET value
@@ -22,7 +22,7 @@ const long timeoutTime = 2000;
 WiFiManager wifiManager;
 
 
-const char* base64Enconding = "YWRtaW46YWRtaW4";
+
 
  
 
@@ -32,8 +32,6 @@ int Status_LedVaranda = LOW;
 int Status_LedBanheiro = LOW; 
 int Status_LedQuarto = LOW; 
 int Status_BombaAgua = LOW; 
-int Status_LedSaidaV = LOW;
-int Status_LedEntradaV = LOW;
 int Status_LedGaragem = LOW;
 
 
