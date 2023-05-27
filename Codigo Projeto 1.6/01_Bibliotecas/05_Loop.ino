@@ -143,17 +143,26 @@ void loop () {
             //**************************************************
             // Exibir a página da web em HTML
 
-            client.println("<!DOCTYPE html><html>");
+            client.println("<!DOCTYPE html lang=pt-br><html>");
+            client.println("<meta http-equiv=X-UA-Compatible content=IE=edge>");
+            client.println("<meta charset=UTF-8>");
             client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
             client.println("<link rel=\"icon\" href=\"data:,\">");
-            client.println("<title> HOWTECH AUTOMACAO </title>");                     // Titulo do topo da Pagina
+            client.println("<title>HowTechSystem - Automação Residencial</title>");                     // Titulo do topo da Pagina
 
 
             //**************************************************
             // CSS para estilizar os botões e Pagina
-            client.println("<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center; background-color: #2dd2cf;}");
-            client.println(".buttonPortao{ background-color: #F2AD91; border-radius: 15px; color: white; padding: 10px 20px;");
-            client.println("text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer;}");
+            client.println("<style>html { font-family: Lexend, sans-serif; display: inline-block; margin: 0px auto; text-align: center; background-color: #2dd2cf;}");
+            client.println("@charset UTF-8");
+            client.println("@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;600&family=Montserrat&display=swap')");
+            client.println("@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap')");
+            client.println("* { margin: 0; padding: 0;}");
+            client.println(".portao-titulo { display: flex; justify-content: center; align-items: center; margin: 0 auto; color: var(--corBoxBranco); font-size: 1.4rem; text-transform: uppercase;}");
+            client.println(".btn-portao { margin: 25px; width: 50%; padding: 9px; border-radius: 20px; font-family:'Lexend', sans-serif; background-color:#F7F7F7;");
+            client.println(" font-weight: 600; text-transform: lowercase; font-size: 1.2rem; color:#1E1E1E; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.07); cursor: pointer; transition: 0.2s ease-in; border: none;}");
+            client.println(".botao-container-portao { display: flex; justify-content: center; align-items: center;}");
+            client.println(".btn-portao:active { transform: scale(1.02); transition: 0.1s ease-in;}");
             client.println(".button { background-color: #4CAF50; border-radius: 15px; color: white; padding: 10px 20px;");
             client.println("text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer;}");
             client.println(".button2 {  background-color: #555555;}");
@@ -164,7 +173,12 @@ void loop () {
             client.println(".temperature-text{font-weight: 600;padding-left: 15px;font-size: 19px;width: 160px;text-align: center;margin-left: 45%;}");
             client.println(".temperature{font-weight: 300;font-size: 60px;color: #f39c12;}");
             client.println("{ text-align: center; font-family: \"Trebuchet MS\", Arial; margin-left:auto; margin-right:auto;}");
-            client.println(".slider { width: 300px; }</style>");
+            //client.println(".slider { width: 300px; }");
+            client.println(".slider-fundo {display: flex;justify-content: center;align-items: center;background-color:#F7F7F7;border-radius: 30px;width: 300px;height: 65px;}");
+            client.println(".slider-container {width: 300px;margin: 25px auto;text-align: center;}");
+            client.println(".slider {width: 80%; -webkit-appearance: none; appearance: none; height: 5px; background-color:#1E1E1E; border-radius: 15px; outline: none; opacity: 0.7;-webkit-transition: .2s;transition: opacity .2s;}");
+            client.println(".slider::-webkit-slider-thumb {-webkit-appearance: none;appearance: none;width: 15px;height: 15px;background-color: #2DC2BF;cursor: pointer;border-radius: 50%;}");
+            client.println(".slider::-moz-range-thumb {width: 15px;height: 15px;background-color: #4CAF50;cursor: pointer;}");          
             client.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>");
                      
             client.println("</style></head>");
@@ -173,7 +187,10 @@ void loop () {
 
             //**************************************************
             // Título da página da web
-            client.println("<body>    <h1>HOWTECH AUTOMACAO RESIDENCIAL</h1> <h3>(WEB Server ESP32)</h3>");
+            client.println("<body>");
+            client.println("<div class=\"portao-titulo\">");
+            client.println("<h1>HowTech System - Automação Residencial</h1>");
+            client.println("</div>");
             
             client.println("<div id=\"webpage\">");
             client.println("<h3>Monitoramento de Temperatura e umidade</h3>");
@@ -237,16 +254,18 @@ void loop () {
               client.print("<a href=\"/L3\"><button class=\"button \">Led Quarto - ON</button></a>");
             }
 
-            client.println("<h3>Acionamento Portao Garagem</h3>");
+            client.println("<div class=\"portao-titulo\">");
+            client.println("<h1>Portão</h1>");
+            client.println("</div>");
             
 
-            client.println("<p>Position: <span id=\"servoPos\"></span></p>");
-            if (valueString)  {
-              client.println("<a href=\"/P1\"><button class=\"buttonPortao \">Fechar</button></a>");
-              myservo.write(valueString.toInt());
-              }
-            
-            client.println("<input type=\"range\" min=\"0\" max=\"90\" class=\"slider\" id=\"servoSlider\" onchange=\"servo(this.value)\" value=\""+valueString+"\"/>");
+            client.println("<p>Position: <span id=\"servoPos\"></span> ° </p>");
+       
+             client.println("<div class=\"slider-container\">");
+             client.println("<div class=\"slider-fundo\">");
+             client.println("<input type=\"range\" min=\"0\" max=\"90\" class=\"slider\" id=\"servoSlider\" onchange=\"servo(this.value)\" value=\""+valueString+"\"/>");
+             client.println("</div>");
+             client.println("</div>");
 
 
             
@@ -257,7 +276,10 @@ void loop () {
             client.println("$.get(\"/?value=\" + pos + \"&\"); {Connection: close};}</script>");
             
              if (valueString)  {
-              client.println("<a href=\"/P2\"><button class=\"buttonPortao \">Abrir</button></a>");
+              client.println("<div class=\"botao-container-portao\">");
+              client.println("<a href=\"/P1\"><button class=\"btn-portao \">Fechar</button></a>");
+              client.println("<a href=\"/P2\"><button class=\"btn-portao \">Abrir</button></a>");
+              client.println("</div>");
               myservo.write(valueString.toInt());
               }
 
