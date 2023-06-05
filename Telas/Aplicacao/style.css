@@ -25,11 +25,15 @@ body {
     font-family: var(--fontePadrao);
 }
 
+/* ----------------------
+------ LUZES 
+----------------------- */
+
 .luzes-titulo {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 30px auto;
     color: var(--corBoxBranco);
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -46,11 +50,55 @@ body {
     font-size: 1.7rem;
 }
 
+.luzes-fundo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.luz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-luz {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--corBoxBranco);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+}
+
+.btn-luz:hover {
+    background-color: var(--corAzulClaro);
+}
+
+.imgLuz {
+    max-width: 100%;
+    width: auto;
+    height: 9.9vh;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 5px;
+}
+
+/* ----------------------
+------ PORTÃO
+----------------------- */
+
 .portao-titulo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-top: 50px;
     color: var(--corBoxBranco);
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -122,22 +170,24 @@ body {
     color: var(--corPreto);
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.07);
     cursor: pointer;
-    transition: 0.2s ease-in;
     border: none;
 
 }
 
 .btn-portao:active {
     transform: scale(1.02);
-    transition: 0.1s ease-in;
 }
 
+/* ----------------------
+------ TEMPERATURA
+----------------------- */
+
 .temperatura-titulo {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-top: 50px;
     color: var(--corBoxBranco);
     font-size: 1.4rem;
     text-transform: uppercase;
@@ -149,6 +199,7 @@ body {
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
+    margin-bottom: 100px;
     text-align: center;
     
     font-size: 1.7rem;
