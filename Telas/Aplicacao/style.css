@@ -73,6 +73,9 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 20px;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .btn-luz:hover {
@@ -81,12 +84,13 @@ body {
 
 .imgLuz {
     max-width: 100%;
-    width: auto;
-    height: 9.9vh;
+    width: 60px;
+    max-height: 100%;
     margin-bottom: 10px;
     overflow: hidden;
     box-sizing: border-box;
     margin: 0 5px;
+    object-fit: contain;
 }
 
 /* ----------------------
@@ -215,16 +219,17 @@ body {
     height: 50px;
     margin: 10px;
     padding: 15px;
+    overflow: hidden;
 }
 
 .imgTemperatura {
     max-width: 100%;
-    width: auto;
-    height: 7.5vh;
+    max-height: 100%;
     margin-bottom: 10px;
     overflow: hidden;
     box-sizing: border-box;
     margin: 0 5px;
+    object-fit: contain;
 }
 
 #termometro-color {
