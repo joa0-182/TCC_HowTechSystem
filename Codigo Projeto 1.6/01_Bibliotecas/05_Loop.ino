@@ -158,7 +158,7 @@ void loop () {
             client.println("@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;600&family=Montserrat&display=swap')");
             client.println("@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap')");
             client.println("* { margin: 0; padding: 0;}");
-            client.println(".portao-titulo { display: flex; justify-content: center; align-items: center; margin: 0 auto; color: var(--corBoxBranco); font-size: 1.4rem; text-transform: uppercase;}");
+            client.println(".portao-titulo { display: flex; justify-content: center; align-items: center; margin: 0 auto; color:#F7F7F7; font-size: 1.4rem; text-transform: uppercase;}");
             client.println(".btn-portao { margin: 25px; width: 50%; padding: 9px; border-radius: 20px; font-family:'Lexend', sans-serif; background-color:#F7F7F7;");
             client.println(" font-weight: 600; text-transform: lowercase; font-size: 1.2rem; color:#1E1E1E; box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.07); cursor: pointer; transition: 0.2s ease-in; border: none;}");
             client.println(".botao-container-portao { display: flex; justify-content: center; align-items: center;}");
@@ -203,79 +203,14 @@ void loop () {
             //**************************************************
             // Título da página da web
             client.println("<body>");
-            client.println("<div class=\"portao-titulo\">");
-            client.println("<h1>HowTech System - Automação Residencial</h1>");
+            client.println("<h1>HowTech System - Automação Residencial</h1>\n");
+            client.println("<h3>Controlada por WEB SERVICE</h3>");
             client.println("</div>");
 
 
 
             client.println("<div id=\"webpage\">");
-            client.println("<div class=\"temperatura-titulo\">");
-            
-            
-            client.println("<h1>Temperatura</h1>");
-            client.println("</div>");
- client.println("<div class=\"temperatura-container\">");
-client.println("<div class=\"termometro\">");
-client.println("<div class=\"temperatura-fundo\">");
-client.println("<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" width=\"640.000000pt\" height=\"50.000000pt\"");
-client.println("viewBox=\"0 0 640.000000 1280.000000\" preserveAspectRatio=\"xMidYMid meet\">");
-client.println("<g transform=\"translate(0.000000,1280.000000) scale(0.100000,-0.100000)\" fill=\"#232323\" stroke=\"none\">");
-client.println("<path d=\"M3033 12785 c-93 -17 -162 -40 -248 -83 -255 -127 -432 -345 -507\"");
-client.println("-623 l-23 -84 -5 -4232 -5 -4232 -85 -56 c-437 -292 -714 -707 -821 -1233 -27");
-client.println("-130 -36 -423 -19 -570 94 -797 686 -1452 1471 -1626 990 -219 1982 385 2238");
-client.println("1365 50 191 56 247 56 489 0 239 -8 301 -61 499 -91 337 -299 673 -560 903");
-client.println("-85 76 -213 171 -281 209 l-43 24 0 518 0 517 325 0 325 0 0 120 0 120 -325 0");
-client.println("-325 0 0 765 0 765 325 0 325 0 0 120 0 120 -325 0 -325 0 0 765 0 765 325 0");
-client.println("325 0 0 120 0 120 -322 2 -323 3 -3 763 -2 762 325 0 325 0 0 125 0 125 -325");
-client.println("0 -325 0 0 913 c0 850 -2 918 -19 1002 -38 186 -127 345 -270 485 -219 213");
-client.println("-524 309 -818 255z m340 -349 c189 -60 340 -209 405 -400 l27 -81 3 -4312 2");
-client.println("-4312 118 -69 c310 -184 502 -381 646 -664 254 -498 227 -1079 -72 -1543 -228");
-client.println("-355 -580 -595 -1005 -687 -150 -32 -446 -32 -600 0 -484 102 -870 399 -1092");
-client.println("841 -210 419 -208 947 5 1372 142 285 353 504 654 680 l126 73 0 4266 c0 2729");
-client.println("4 4289 10 4333 21 140 75 249 178 352 67 67 179 133 262 153 25 6 54 14 65 16");
-client.println("38 9 220 -3 268 -18z\" />");
-client.println("<g fill=\"#FF3E4D\" stroke=\"none\">");
-client.println("<path d=\"M2830 5136 l0 -1953 -77 -28 c-436 -154 -766 -531 -864 -985 -33\"");
-client.println("-153 -33 -402 -1 -549 122 -545 540 -950 1082 -1047 125 -22 335 -22 460 0");
-client.println("418 75 778 343 967 721 54 107 87 200 114 326 33 148 33 397 0 549 -98 454");
-client.println("-428 831 -863 985 l-78 28 0 1953 0 1954 -370 0 -370 0 0 -1954z\"/>");
-client.println("</g>");
-client.println("</g>");
-client.println("</svg>");
-client.println((int)temperature);
-client.println("</div>");
-client.println("</div>");
-
-client.println("<div class=\"humidade\">");
-client.println("<div class=\"temperatura-fundo\">");
-client.println("<svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\" width=\"5%\" height=\"5%\" version=\"1.1\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\"");
-client.println("viewBox=\"0 0 500 500\"");
-client.println("xmlns:xlink=\"http://www.w3.org/1999/xlink\">");
-client.println("<defs>");
-client.println("<style type=\"text/css\">");
-client.println("<![CDATA[");
-client.println(".fil0 {fill:#008cff}");
-client.println(".fil2 {fill:#55b0fa}");
-client.println(".fil1 {fill:#b6e3ff;fill-rule:nonzero}");
-client.println("]]>");
-client.println("</style>");
-client.println("</defs>");
-client.println("<g id=\"Layer_x0020_1\">");
-client.println("<metadata id=\"CorelCorpID_0Corel-Layer\"/>");
-client.println("<path class=\"fil0\" d=\"M265 35c54,112 142,179 156,263 12,75 -48,182 -171,182l0 -460c5,0 10,5 15,15z\"/>");
-client.println("<path class=\"fil1\" d=\"M387 345c-5,21 -15,41 -30,56 -14,15 -33,26 -54,32 -7,2 -13,1 -19,-3 -7,-5 -9,-11 -9,-20 -1,-10 6,-19 16,-22 12,-4 24,-10 32,-20 9,-9 15,-20 19,-33 2,-12 12,-18 23,-18 8,0 14,3 18,9 5,5 6,12 4,19z\"/>");
-client.println("<path class=\"fil2\" d=\"M235 35c-54,112 -142,179 -156,263 -12,75 48,182 171,182l0 -460c-5,0 -10,5 -15,15z\"/>");
-client.println("</g>");
-client.println("</svg>");
-client.println((int)humidity);
-client.println("</div>");
-client.println("</div>");
-client.println("</div>");
-
-            
-
-
+        
             client.println("<div class=\"luzes-titulo\"><h1>Luzes<h1></div>");
 
 
@@ -414,10 +349,36 @@ client.println("</div>");
               myservo.write(valueString.toInt());
             }
 
+            client.println("<div class=\"temperatura-titulo\">");
+            
+            client.println("<h1>Temperatura e Humidade do ar</h1>");
+            client.println("</div>");
+            client.println("<div class=\"temperatura-container\">");
+            client.println("<div class=\"termometro\">");
+            client.println("<div class=\"temperatura-fundo\">");
+            client.println("<svg");
+            client.println("width=\"90px\" height=\"90px\" viewBox=\"0 0 1024 1024\" class=\"icon\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#f41a1a\" stroke=\"#f41a1a\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"><path d=\"M570.8 742c0.5-2.9 0.9-5.8 0.9-8.8V418.5H458.4v314.6c0 3 0.4 5.9 0.9 8.8-34.3 19.5-57.5 56.3-57.5 98.5 0 62.6 50.7 113.3 113.3 113.3 62.6 0 113.3-50.7 113.3-113.3-0.1-42.2-23.3-79-57.6-98.4z\" fill=\"#f41a1a\"></path><path d=\"M594.3 730.3V194.8c0-43.7-35.6-79.3-79.3-79.3s-79.3 35.6-79.3 79.3v535.4c-35.2 25.4-56.6 66.5-56.6 110.2 0 75 61 135.9 135.9 135.9s136-60.8 136-135.8c0-43.7-21.4-84.8-56.7-110.2zM515 931.1c-50 0-90.6-40.6-90.6-90.6 0-32.1 17.4-62.1 45.3-78.4 7-4 11.3-11.5 11.3-19.6v-40.8h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-45.3h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-45.3h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481V498h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-45.3h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-45.3h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-45.3h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481V226h11.3c6.3 0 11.3-5.1 11.3-11.3 0-6.3-5.1-11.3-11.3-11.3H481v-8.5c0-18.7 15.2-34 34-34 18.7 0 34 15.2 34 34v547.7c0 8.1 4.3 15.6 11.3 19.6 28 16.2 45.3 46.2 45.3 78.4 0.1 49.9-40.6 90.5-90.6 90.5z\" fill=\"#211F1E\"></path></g>");
+            client.println("</svg>");
+            client.println((int)temperature);
+            client.println("</div>");
+            client.println("</div>");
+            
+            client.println("<div class=\"humidade\">");
+            client.println("<div class=\"temperatura-fundo\">");
+            client.println("<svg");
+            client.println("width=\"101px\" height=\"101px\" viewBox=\"0 0 1024 1024\" class=\"icon\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#000000\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"><path d=\"M664.2 596.1c0 163.1-92.6 229.9-206.7 229.9s-206.7-66.8-206.7-229.9 206.7-426.2 206.7-426.2S664.2 433 664.2 596.1z\" fill=\"#44C0C6\"></path><path d=\"M457.5 836.3c-62.9 0-116-19.6-153.5-56.8-42.2-41.8-63.6-103.6-63.6-183.5 0-69.5 35.3-163.6 104.8-279.6 51.4-85.7 103.6-152.3 104.1-153 2-2.5 5-4 8.1-4 3.2 0 6.2 1.5 8.1 4 0.5 0.7 52.7 67.3 104.1 153 69.6 116 104.8 210 104.8 279.6 0 79.9-21.4 141.6-63.6 183.5-37.3 37.1-90.4 56.8-153.3 56.8z m0-649.4c-16.5 21.9-55.8 75.6-94.6 140.4-46.4 77.4-101.8 186.9-101.8 268.7 0 74.2 19.3 131 57.5 168.8 33.5 33.2 81.5 50.8 138.9 50.8s105.4-17.6 138.9-50.8c38.1-37.8 57.5-94.6 57.5-168.8 0-81.8-55.3-191.3-101.8-268.7-38.8-64.7-78.1-118.4-94.6-140.4z\" fill=\"\"></path><path d=\"M736 115m-97.1 0a97.1 97.1 0 1 0 194.2 0 97.1 97.1 0 1 0-194.2 0Z\" fill=\"#80F9E7\"></path><path d=\"M736 222.4c-59.2 0-107.4-48.2-107.4-107.4S676.8 7.6 736 7.6 843.4 55.8 843.4 115 795.3 222.4 736 222.4z m0-194.2c-47.8 0-86.8 38.9-86.8 86.8 0 47.8 38.9 86.8 86.8 86.8s86.8-38.9 86.8-86.8c0-47.8-38.9-86.8-86.8-86.8z\" fill=\"\"></path><path d=\"M651.6 511.9m-84.4 0a84.4 84.4 0 1 0 168.8 0 84.4 84.4 0 1 0-168.8 0Z\" fill=\"#80F9E7\"></path><path d=\"M651.6 606.7c-52.3 0-94.8-42.5-94.8-94.8s42.5-94.8 94.8-94.8 94.8 42.5 94.8 94.8-42.6 94.8-94.8 94.8z m0-168.9c-40.9 0-74.1 33.2-74.1 74.1 0 40.9 33.2 74.1 74.1 74.1 40.9 0 74.1-33.2 74.1-74.1 0-40.9-33.3-74.1-74.1-74.1z\" fill=\"\"></path><path d=\"M214.2 923.1m-84.4 0a84.4 84.4 0 1 0 168.8 0 84.4 84.4 0 1 0-168.8 0Z\" fill=\"#80F9E7\"></path><path d=\"M214.2 1017.9c-52.3 0-94.8-42.5-94.8-94.8s42.5-94.8 94.8-94.8 94.8 42.5 94.8 94.8-42.5 94.8-94.8 94.8z m0-168.9c-40.9 0-74.1 33.2-74.1 74.1 0 40.9 33.2 74.1 74.1 74.1s74.1-33.2 74.1-74.1c0-40.8-33.2-74.1-74.1-74.1z\" fill=\"\"></path><path d=\"M905 621.9m-63.9 0a63.9 63.9 0 1 0 127.8 0 63.9 63.9 0 1 0-127.8 0Z\" fill=\"#80F9E7\"></path><path d=\"M905 696.2c-40.9 0-74.2-33.3-74.2-74.2s33.3-74.2 74.2-74.2 74.2 33.3 74.2 74.2-33.3 74.2-74.2 74.2z m0-127.8c-29.5 0-53.6 24-53.6 53.6 0 29.5 24 53.6 53.6 53.6 29.5 0 53.6-24 53.6-53.6s-24.1-53.6-53.6-53.6z\" fill=\"\"></path><path d=\"M248.2 222.9m-63.9 0a63.9 63.9 0 1 0 127.8 0 63.9 63.9 0 1 0-127.8 0Z\" fill=\"#80F9E7\"></path><path d=\"M248.2 297.1c-40.9 0-74.2-33.3-74.2-74.2s33.3-74.2 74.2-74.2 74.2 33.3 74.2 74.2-33.2 74.2-74.2 74.2z m0-127.8c-29.5 0-53.6 24-53.6 53.6s24 53.6 53.6 53.6c29.5 0 53.6-24 53.6-53.6s-24-53.6-53.6-53.6z\" fill=\"\"></path><path d=\"M706.1 929.3m-54.5 0a54.5 54.5 0 1 0 109 0 54.5 54.5 0 1 0-109 0Z\" fill=\"#80F9E7\"></path><path d=\"M706.1 994.2c-35.8 0-64.9-29.1-64.9-64.9s29.1-64.9 64.9-64.9c35.8 0 64.9 29.1 64.9 64.9s-29.1 64.9-64.9 64.9z m0-109.1c-24.4 0-44.2 19.8-44.2 44.2 0 24.4 19.8 44.2 44.2 44.2 24.4 0 44.2-19.8 44.2-44.2 0-24.4-19.8-44.2-44.2-44.2z\" fill=\"\"></path><path d=\"M119.1 492.8m-65.3 0a65.3 65.3 0 1 0 130.6 0 65.3 65.3 0 1 0-130.6 0Z\" fill=\"#80F9E7\"></path><path d=\"M119.1 568.4c-41.7 0-75.6-33.9-75.6-75.6s33.9-75.6 75.6-75.6c41.7 0 75.6 33.9 75.6 75.6s-33.9 75.6-75.6 75.6z m0-130.6c-30.3 0-55 24.7-55 55s24.7 55 55 55 55-24.7 55-55c-0.1-30.4-24.7-55-55-55z\" fill=\"\"></path></g>");
+            client.println("</svg>");
+            client.println((int)humidity);
+            client.println("</div>");
+            client.println("</div>");
+            client.println("</div>");
+
 
             client.println("<P>");
 
-            client.println("HOWTECH Automacao Residencial");
+            client.println("<h5>HowTech System - Automação Residencial</h5>");
+            client.println("<h5>Controlada por WEB SERVICE</h5>");
+
             client.println("<P>");
 
 
